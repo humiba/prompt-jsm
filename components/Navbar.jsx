@@ -13,8 +13,8 @@ export default function Navbar() {
 
   useEffect(() => {
     (async () => {
-      const res = await getProviders();
-      setProviders(res);
+      const response = await getProviders();
+      setProviders(response);
     })();
   }, []);
 
@@ -61,11 +61,11 @@ export default function Navbar() {
                   type="button"
                   key={provider.name}
                   onClick={() => {
-                    signIn(provider.id, { callbackUrl: "/" });
+                    signIn(provider.id);
                   }}
                   className="black_btn"
                 >
-                  Sign in
+                  Sign In
                 </button>
               ))}
           </>
@@ -122,11 +122,11 @@ export default function Navbar() {
                   type="button"
                   key={provider.name}
                   onClick={() => {
-                    signIn(provider.id, { callbackUrl: "/" });
+                    signIn(provider.id);
                   }}
                   className="black_btn"
                 >
-                  Sign in
+                  Sign In
                 </button>
               ))}
           </>
